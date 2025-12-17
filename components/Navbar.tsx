@@ -13,6 +13,7 @@ export const Navbar: React.FC = () => {
       setIsScrolled(window.scrollY > 20);
 
       const sections = ['about', 'studio', 'pricing', 'location'];
+      // Trigger active state when section is in the upper third of the screen
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const section of sections) {
@@ -37,7 +38,7 @@ export const Navbar: React.FC = () => {
     const element = document.getElementById(targetId);
     
     if (element) {
-      const navHeight = 80;
+      const navHeight = 80; // Approximate height of the fixed navbar
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
@@ -50,40 +51,16 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'nl' ? 'en' : 'nl');
+  };
+
   const navLinks = [
     { name: t('nav.about'), href: '#about', id: 'about' },
     { name: t('nav.studio'), href: '#studio', id: 'studio' },
     { name: t('nav.pricing'), href: '#pricing', id: 'pricing' },
     { name: t('nav.location'), href: '#location', id: 'location' },
   ];
-
-  // Modern Segmented Control for Language
-  const LanguageToggle = ({ className = "" }: { className?: string }) => (
-    <div className={`relative flex items-center bg-stone-200/50 p-1 rounded-full border border-stone-300/20 backdrop-blur-sm select-none ${className}`}>
-      {/* Sliding background indicator */}
-      <div 
-        className={`absolute h-[calc(100%-8px)] w-[calc(50%-4px)] bg-primary-900 rounded-full transition-all duration-300 ease-in-out shadow-sm ${
-          language === 'nl' ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      />
-      <button 
-        onClick={() => setLanguage('nl')}
-        className={`relative z-10 w-10 h-7 flex items-center justify-center text-[10px] font-bold tracking-tight transition-colors duration-300 ${
-          language === 'nl' ? 'text-white' : 'text-stone-500 hover:text-stone-800'
-        }`}
-      >
-        NL
-      </button>
-      <button 
-        onClick={() => setLanguage('en')}
-        className={`relative z-10 w-10 h-7 flex items-center justify-center text-[10px] font-bold tracking-tight transition-colors duration-300 ${
-          language === 'en' ? 'text-white' : 'text-stone-500 hover:text-stone-800'
-        }`}
-      >
-        EN
-      </button>
-    </div>
-  );
 
   return (
     <nav
@@ -94,66 +71,73 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex flex-col items-center group select-none">
-            <span className={`text-3xl font-serif font-normal tracking-wider leading-none transition-colors text-primary-900`}>
+            <span className={`text-3xl font-serif font-normal tracking-wider leading-none transition-colors ${isScrolled ? 'text-primary-900' : 'text-primary-900'}`}>
               LOU
             </span>
-            <span className={`text-[0.65rem] font-sans font-medium tracking-[0.35em] uppercase leading-none mt-1.5 ml-1 transition-colors text-primary-800`}>
+            <span className={`text-[0.65rem] font-sans font-medium tracking-[0.35em] uppercase leading-none mt-1.5 ml-1 transition-colors ${isScrolled ? 'text-primary-700' : 'text-primary-800'}`}>
               STUDIO
             </span>
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center">
-            <div className="flex items-center space-x-8 mr-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className={`text-sm font-medium transition-colors hover:text-primary-600 ${
-                    activeSection === link.id ? 'text-primary-600 border-b-2 border-primary-500 pb-0.5' : 'text-stone-600'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-            
-            <div className="flex items-center gap-4 border-l border-stone-200 pl-8">
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
               <a
-                href="https://wa.me/31612345678"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary-800 transition-all transform hover:scale-105 shadow-md shadow-primary-900/10 active:scale-95"
+                key={link.id}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+                  activeSection === link.id ? 'text-primary-600 underline underline-offset-4 decoration-primary-500' : 'text-stone-600'
+                }`}
               >
-                {t('nav.book')}
+                {link.name}
               </a>
-              <LanguageToggle />
-            </div>
+            ))}
+            
+            <button 
+              onClick={toggleLanguage}
+              className="text-stone-600 hover:text-primary-600 font-medium text-sm flex items-center gap-1 uppercase"
+            >
+              {language}
+            </button>
+
+            <a
+              href="https://wa.me/31612345678"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-primary-800 transition-colors transform hover:scale-105 shadow-md shadow-primary-900/20"
+            >
+              {t('nav.book')}
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-3">
-            <LanguageToggle className="scale-90" />
+          <div className="md:hidden flex items-center gap-4">
+            <button 
+              onClick={toggleLanguage}
+              className="text-primary-900 font-medium text-sm uppercase"
+            >
+              {language}
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-primary-900 p-2 focus:outline-none bg-stone-200/50 rounded-full"
+              className="text-primary-900 p-2 focus:outline-none"
             >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-stone-50 border-b border-stone-200 shadow-2xl transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 py-8' : 'max-h-0 py-0'}`}>
-        <div className="px-6 flex flex-col space-y-6">
+      <div className={`md:hidden absolute top-full left-0 w-full bg-stone-50 border-b border-stone-200 shadow-lg transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 py-4' : 'max-h-0 py-0'}`}>
+        <div className="px-4 flex flex-col space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
-              className={`text-xl font-medium transition-colors ${
+              className={`text-lg font-medium transition-colors ${
                   activeSection === link.id ? 'text-primary-900' : 'text-stone-600 hover:text-primary-600'
               }`}
             >
@@ -162,7 +146,7 @@ export const Navbar: React.FC = () => {
           ))}
           <a
              href="https://wa.me/31612345678"
-             className="bg-primary-900 text-white text-center py-4 rounded-2xl font-medium hover:bg-primary-800 transition-colors shadow-lg shadow-primary-900/20 text-lg"
+             className="bg-primary-900 text-white text-center py-3 rounded-md font-medium hover:bg-primary-800 transition-colors"
           >
             {t('nav.book')}
           </a>

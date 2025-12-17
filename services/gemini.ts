@@ -48,7 +48,7 @@ export const getChatSession = (lang: 'nl' | 'en' = 'nl', forceReset: boolean = f
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     currentLang = lang;
     chatSession = ai.chats.create({
-      model: 'gemini-flash-latest',
+      model: 'gemini-2.5-flash',
       config: {
         systemInstruction: getStudioInfo(lang),
         temperature: 0.7,
