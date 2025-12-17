@@ -58,23 +58,24 @@ export const Navbar: React.FC = () => {
   ];
 
   const LanguageToggle = ({ className = "" }: { className?: string }) => (
-    <div className={`flex items-center bg-stone-200/50 p-1 rounded-full border border-stone-200/50 backdrop-blur-sm ${className}`}>
+    <div className={`relative flex items-center bg-stone-200/40 p-1 rounded-full border border-stone-200/60 backdrop-blur-md select-none ${className}`}>
+      <div 
+        className={`absolute h-[calc(100%-8px)] w-[calc(50%-4px)] bg-primary-900 rounded-full transition-all duration-300 ease-out shadow-sm ${
+          language === 'nl' ? 'left-1' : 'left-[calc(50%+2px)]'
+        }`}
+      />
       <button 
         onClick={() => setLanguage('nl')}
-        className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all duration-200 ${
-          language === 'nl' 
-          ? 'bg-primary-900 text-white shadow-sm' 
-          : 'text-stone-500 hover:text-primary-900'
+        className={`relative z-10 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-colors duration-300 w-10 text-center ${
+          language === 'nl' ? 'text-white' : 'text-stone-500 hover:text-stone-800'
         }`}
       >
         NL
       </button>
       <button 
         onClick={() => setLanguage('en')}
-        className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all duration-200 ${
-          language === 'en' 
-          ? 'bg-primary-900 text-white shadow-sm' 
-          : 'text-stone-500 hover:text-primary-900'
+        className={`relative z-10 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-colors duration-300 w-10 text-center ${
+          language === 'en' ? 'text-white' : 'text-stone-500 hover:text-stone-800'
         }`}
       >
         EN
@@ -108,7 +109,7 @@ export const Navbar: React.FC = () => {
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
                   className={`text-sm font-medium transition-colors hover:text-primary-600 ${
-                    activeSection === link.id ? 'text-primary-600 underline underline-offset-4 decoration-primary-500' : 'text-stone-600'
+                    activeSection === link.id ? 'text-primary-600 border-b-2 border-primary-500 pb-0.5' : 'text-stone-600'
                   }`}
                 >
                   {link.name}
@@ -120,12 +121,14 @@ export const Navbar: React.FC = () => {
               href="https://wa.me/31612345678"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-primary-800 transition-colors transform hover:scale-105 shadow-md shadow-primary-900/20"
+              className="bg-primary-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary-800 transition-all transform hover:scale-105 shadow-lg shadow-primary-900/10 active:scale-95"
             >
               {t('nav.book')}
             </a>
 
-            <LanguageToggle />
+            <div className="pl-2 border-l border-stone-200">
+              <LanguageToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -142,8 +145,8 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-stone-50 border-b border-stone-200 shadow-lg transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 py-4' : 'max-h-0 py-0'}`}>
-        <div className="px-4 flex flex-col space-y-4">
+      <div className={`md:hidden absolute top-full left-0 w-full bg-stone-50 border-b border-stone-200 shadow-xl transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 py-6' : 'max-h-0 py-0'}`}>
+        <div className="px-6 flex flex-col space-y-5">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -158,7 +161,7 @@ export const Navbar: React.FC = () => {
           ))}
           <a
              href="https://wa.me/31612345678"
-             className="bg-primary-900 text-white text-center py-3 rounded-md font-medium hover:bg-primary-800 transition-colors"
+             className="bg-primary-900 text-white text-center py-4 rounded-xl font-medium hover:bg-primary-800 transition-colors shadow-lg"
           >
             {t('nav.book')}
           </a>

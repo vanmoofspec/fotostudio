@@ -48,7 +48,7 @@ export const getChatSession = (lang: 'nl' | 'en' = 'nl', forceReset: boolean = f
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     currentLang = lang;
     chatSession = ai.chats.create({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3-flash-preview',
       config: {
         systemInstruction: getStudioInfo(lang),
         temperature: 0.7,
@@ -61,7 +61,7 @@ export const getChatSession = (lang: 'nl' | 'en' = 'nl', forceReset: boolean = f
 export const sendMessageToGemini = async (message: string, lang: 'nl' | 'en' = 'nl'): Promise<string> => {
   try {
     const chat = getChatSession(lang);
-    const result: GenerateContentResponse = await chat.sendMessage({ message });
+    const result: GenerateContentResponse = await chat.sendMessage({ message: message });
     return result.text || (lang === 'en' ? "Sorry, I didn't catch that." : "Sorry, ik begreep dat niet helemaal.");
   } catch (error) {
     console.error("Gemini Error:", error);
