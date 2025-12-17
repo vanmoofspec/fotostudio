@@ -73,7 +73,7 @@ export const Navbar: React.FC = () => {
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 group">
             <Camera className={`h-6 w-6 transition-colors ${isScrolled ? 'text-stone-900' : 'text-stone-900'}`} />
             <span className={`text-2xl font-serif font-bold tracking-wide transition-colors ${isScrolled ? 'text-stone-900' : 'text-stone-900'}`}>
-              LICHTRUIMTE
+              LOU STUDIO
             </span>
           </a>
 

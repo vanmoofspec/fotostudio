@@ -29,7 +29,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="text-stone-500" size={20} />
-                <span className="text-stone-300">info@lichtruimtestudio.nl</span>
+                <span className="text-stone-300">info@loustudio.nl</span>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="text-stone-500" size={20} />
@@ -51,14 +51,14 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
                 src="https://maps.google.com/maps?q=Kabelweg+22,+1014+BB+Amsterdam&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 frameBorder="0" 
                 scrolling="no" 
-                title="Lichtruimte Studio Location"
+                title="Lou Studio Location"
                 className="w-full h-full"
              ></iframe>
           </div>
         </div>
         
         <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-stone-500">
-            <p>&copy; {new Date().getFullYear()} Lichtruimte Studio. {t('contact.rights')}</p>
+            <p>&copy; {new Date().getFullYear()} Lou Studio. {t('contact.rights')}</p>
             <div className="flex gap-6 mt-4 md:mt-0">
                 <button onClick={onOpenTerms} className="hover:text-stone-300 transition-colors">
                   {t('contact.terms')}
