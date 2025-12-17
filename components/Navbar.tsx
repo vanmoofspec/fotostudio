@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar: React.FC = () => {
@@ -13,7 +13,6 @@ export const Navbar: React.FC = () => {
       setIsScrolled(window.scrollY > 20);
 
       const sections = ['about', 'studio', 'pricing', 'location'];
-      // Trigger active state when section is in the upper third of the screen
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const section of sections) {
@@ -38,7 +37,7 @@ export const Navbar: React.FC = () => {
     const element = document.getElementById(targetId);
     
     if (element) {
-      const navHeight = 80; // Approximate height of the fixed navbar
+      const navHeight = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
@@ -51,16 +50,37 @@ export const Navbar: React.FC = () => {
     }
   };
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'nl' ? 'en' : 'nl');
-  };
-
   const navLinks = [
     { name: t('nav.about'), href: '#about', id: 'about' },
     { name: t('nav.studio'), href: '#studio', id: 'studio' },
     { name: t('nav.pricing'), href: '#pricing', id: 'pricing' },
     { name: t('nav.location'), href: '#location', id: 'location' },
   ];
+
+  const LanguageToggle = ({ className = "" }: { className?: string }) => (
+    <div className={`flex items-center bg-stone-200/50 p-1 rounded-full border border-stone-200/50 backdrop-blur-sm ${className}`}>
+      <button 
+        onClick={() => setLanguage('nl')}
+        className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all duration-200 ${
+          language === 'nl' 
+          ? 'bg-primary-900 text-white shadow-sm' 
+          : 'text-stone-500 hover:text-primary-900'
+        }`}
+      >
+        NL
+      </button>
+      <button 
+        onClick={() => setLanguage('en')}
+        className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all duration-200 ${
+          language === 'en' 
+          ? 'bg-primary-900 text-white shadow-sm' 
+          : 'text-stone-500 hover:text-primary-900'
+        }`}
+      >
+        EN
+      </button>
+    </div>
+  );
 
   return (
     <nav
@@ -80,27 +100,22 @@ export const Navbar: React.FC = () => {
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className={`text-sm font-medium transition-colors hover:text-primary-600 ${
-                  activeSection === link.id ? 'text-primary-600 underline underline-offset-4 decoration-primary-500' : 'text-stone-600'
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex items-center space-x-8 mr-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
+                  className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+                    activeSection === link.id ? 'text-primary-600 underline underline-offset-4 decoration-primary-500' : 'text-stone-600'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
             
-            <button 
-              onClick={toggleLanguage}
-              className="text-stone-600 hover:text-primary-600 font-medium text-sm flex items-center gap-1 uppercase"
-            >
-              {language}
-            </button>
-
             <a
               href="https://wa.me/31612345678"
               target="_blank"
@@ -109,21 +124,18 @@ export const Navbar: React.FC = () => {
             >
               {t('nav.book')}
             </a>
+
+            <LanguageToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4">
-            <button 
-              onClick={toggleLanguage}
-              className="text-primary-900 font-medium text-sm uppercase"
-            >
-              {language}
-            </button>
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageToggle className="scale-90" />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-primary-900 p-2 focus:outline-none"
+              className="text-primary-900 p-2 focus:outline-none bg-stone-200/50 rounded-full"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
