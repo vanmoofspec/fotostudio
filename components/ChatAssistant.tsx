@@ -82,7 +82,7 @@ export const ChatAssistant: React.FC = () => {
               <div>
                 <h3 className="text-white font-medium text-sm">{t('chat.title')}</h3>
                 <span className="flex items-center gap-1 text-xs text-stone-400">
-                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                  <span className="w-1.5 h-1.5 bg-primary-400 rounded-full animate-pulse"></span>
                   {t('chat.online')}
                 </span>
               </div>
