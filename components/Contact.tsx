@@ -43,18 +43,17 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
             </div>
           </div>
           
-          <div className="h-64 md:h-full bg-stone-800 rounded-2xl overflow-hidden relative grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500 border border-stone-700">
-             {/* Placeholder for map */}
-             <img 
-                src="https://picsum.photos/800/600?grayscale" 
-                alt="Map location" 
-                className="w-full h-full object-cover"
-             />
-             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="bg-white/10 backdrop-blur-md px-4 py-2 rounded text-sm font-medium border border-white/20">
-                    {t('contact.map')}
-                </span>
-             </div>
+          <div className="h-80 md:h-full bg-stone-800 rounded-2xl overflow-hidden relative border border-stone-700 shadow-xl">
+             <iframe 
+                width="100%" 
+                height="100%" 
+                id="gmap_canvas" 
+                src="https://maps.google.com/maps?q=Kabelweg+22,+1014+BB+Amsterdam&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                frameBorder="0" 
+                scrolling="no" 
+                title="Lichtruimte Studio Location"
+                className="w-full h-full"
+             ></iframe>
           </div>
         </div>
         
