@@ -49,7 +49,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
             </div>
           </div>
           
-          <div className="h-80 md:h-full min-h-[350px] bg-primary-900 rounded-3xl overflow-hidden relative border border-primary-800 shadow-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
+          <div className="h-80 md:h-full min-h-[350px] bg-white rounded-3xl overflow-hidden relative border border-primary-800 shadow-2xl transition-all duration-700">
              <iframe 
                 width="100%" 
                 height="100%" 
@@ -58,9 +58,9 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
                 frameBorder="0" 
                 scrolling="no" 
                 title="Lou Studio Location"
-                className="w-full h-full opacity-80 hover:opacity-100 transition-opacity"
+                className="w-full h-full"
              ></iframe>
-             <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-3xl"></div>
+             <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/5 rounded-3xl"></div>
           </div>
         </div>
         
