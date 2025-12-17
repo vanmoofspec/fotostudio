@@ -27,13 +27,12 @@ export const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1533109721025-d1ae7ee7c1e1?q=80&w=2670&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?auto=format&fit=crop&q=80&w=2670"
           alt="Professional Studio Interior with Lighting"
-          className="w-full h-full object-cover grayscale"
+          className="w-full h-full object-cover"
         />
         {/* Added a hint of primary color to the overlay */}
-        <div className="absolute inset-0 bg-primary-900/20 mix-blend-overlay"></div>
-        <div className="absolute inset-0 bg-stone-100/10 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-stone-900/10 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-stone-50 via-transparent to-transparent"></div>
       </div>
 
