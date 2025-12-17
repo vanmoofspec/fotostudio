@@ -79,15 +79,8 @@ const translations = {
     'contact.terms': 'Algemene Voorwaarden',
     'contact.privacy': 'Privacybeleid',
 
-    // WhatsApp & Chat
+    // WhatsApp
     'wa.button': 'WhatsApp ons',
-    'chat.trigger': 'Vraag de assistent',
-    'chat.title': 'Studio Assistent',
-    'chat.online': 'Online',
-    'chat.thinking': 'Denken...',
-    'chat.placeholder': 'Typ je vraag...',
-    'chat.welcome': 'Hi! Ik ben de assistent van Lou Studio. Heb je vragen over de studio of beschikbaarheid?',
-    'chat.error': 'Er ging iets mis. Probeer het later opnieuw.',
 
     // Modals
     'terms.title': 'Algemene Voorwaarden',
@@ -166,15 +159,8 @@ const translations = {
     'contact.terms': 'Terms & Conditions',
     'contact.privacy': 'Privacy Policy',
 
-    // WhatsApp & Chat
+    // WhatsApp
     'wa.button': 'WhatsApp us',
-    'chat.trigger': 'Ask the assistant',
-    'chat.title': 'Studio Assistant',
-    'chat.online': 'Online',
-    'chat.thinking': 'Thinking...',
-    'chat.placeholder': 'Type your question...',
-    'chat.welcome': 'Hi! I am the Lou Studio assistant. Do you have questions about the studio or availability?',
-    'chat.error': 'Something went wrong. Please try again later.',
 
     // Modals
     'terms.title': 'Terms & Conditions',
