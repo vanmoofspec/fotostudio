@@ -1,5 +1,8 @@
 import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 
+// Ensure process.env is typed for TypeScript
+declare const process: { env: any };
+
 const getStudioInfo = (lang: 'nl' | 'en') => {
   const baseInfo = `
 - Locatie/Location: Kabelweg 22, Amsterdam.
