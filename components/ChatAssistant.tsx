@@ -61,10 +61,10 @@ export const ChatAssistant: React.FC = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-24 right-6 z-40 bg-white text-stone-900 p-3 rounded-full shadow-lg border border-stone-200 hover:bg-stone-50 transition-all duration-300 group"
+          className="fixed bottom-24 right-6 z-40 bg-white text-stone-900 p-3 rounded-full shadow-lg border border-stone-200 hover:bg-stone-50 transition-all duration-300 group hover:scale-110"
         >
-          <Bot size={24} />
-          <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-stone-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <Bot size={24} className="text-primary-600" />
+          <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-stone-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             {t('chat.trigger')}
           </span>
         </button>
@@ -74,9 +74,9 @@ export const ChatAssistant: React.FC = () => {
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-80 sm:w-96 h-[450px] bg-white rounded-2xl shadow-2xl border border-stone-100 z-50 flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 fade-in duration-300">
           {/* Header */}
-          <div className="bg-stone-900 p-4 flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-stone-700 rounded-full flex items-center justify-center">
+          <div className="bg-stone-900 p-4 flex justify-between items-center border-b border-stone-800">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
                 <Bot size={16} className="text-white" />
               </div>
               <div>
@@ -105,7 +105,7 @@ export const ChatAssistant: React.FC = () => {
                 <div
                   className={`max-w-[80%] p-3 rounded-2xl text-sm ${
                     msg.role === 'user'
-                      ? 'bg-stone-900 text-white rounded-tr-none'
+                      ? 'bg-primary-600 text-white rounded-tr-none'
                       : 'bg-white text-stone-800 border border-stone-100 rounded-tl-none shadow-sm'
                   }`}
                 >
@@ -116,7 +116,7 @@ export const ChatAssistant: React.FC = () => {
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-white p-3 rounded-2xl rounded-tl-none border border-stone-100 shadow-sm flex items-center gap-2">
-                  <Loader2 size={14} className="animate-spin text-stone-400" />
+                  <Loader2 size={14} className="animate-spin text-primary-500" />
                   <span className="text-xs text-stone-400">{t('chat.thinking')}</span>
                 </div>
               </div>
@@ -133,12 +133,12 @@ export const ChatAssistant: React.FC = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder={t('chat.placeholder')}
-                className="flex-1 bg-stone-100 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-stone-900 text-stone-900"
+                className="flex-1 bg-stone-100 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary-600 text-stone-900"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
-                className="bg-stone-900 text-white p-2 rounded-xl hover:bg-stone-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-primary-600 text-white p-2 rounded-xl hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send size={18} />
               </button>

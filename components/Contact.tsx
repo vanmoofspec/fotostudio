@@ -21,23 +21,23 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <MapPin className="text-stone-500 mt-1" size={20} />
+                <MapPin className="text-primary-500 mt-1" size={20} />
                 <span className="text-stone-300">
                   Kabelweg 22<br />
                   1014 BB Amsterdam
                 </span>
               </div>
               <div className="flex items-center gap-4">
-                <Mail className="text-stone-500" size={20} />
+                <Mail className="text-primary-500" size={20} />
                 <span className="text-stone-300">info@loustudio.nl</span>
               </div>
               <div className="flex items-center gap-4">
-                <Phone className="text-stone-500" size={20} />
+                <Phone className="text-primary-500" size={20} />
                 <span className="text-stone-300">+31 (0) 20 123 4567</span>
               </div>
             </div>
             <div className="mt-8 flex gap-4">
-                <a href="#" className="p-2 bg-stone-800 rounded-full hover:bg-stone-700 transition-colors">
+                <a href="#" className="p-2 bg-stone-800 rounded-full hover:bg-primary-600 transition-colors">
                     <Instagram size={20} />
                 </a>
             </div>
@@ -60,10 +60,10 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
         <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-stone-500">
             <p>&copy; {new Date().getFullYear()} Lou Studio. {t('contact.rights')}</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-                <button onClick={onOpenTerms} className="hover:text-stone-300 transition-colors">
+                <button onClick={onOpenTerms} className="hover:text-primary-400 transition-colors">
                   {t('contact.terms')}
                 </button>
-                <button onClick={onOpenPrivacy} className="hover:text-stone-300 transition-colors">
+                <button onClick={onOpenPrivacy} className="hover:text-primary-400 transition-colors">
                   {t('contact.privacy')}
                 </button>
             </div>

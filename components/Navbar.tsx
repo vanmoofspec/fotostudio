@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Camera } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar: React.FC = () => {
@@ -70,10 +70,12 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 group">
-            <Camera className={`h-6 w-6 transition-colors ${isScrolled ? 'text-stone-900' : 'text-stone-900'}`} />
-            <span className={`text-2xl font-serif font-bold tracking-wide transition-colors ${isScrolled ? 'text-stone-900' : 'text-stone-900'}`}>
-              LOU STUDIO
+          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex flex-col items-center group select-none">
+            <span className={`text-3xl font-serif font-normal tracking-wider leading-none transition-colors ${isScrolled ? 'text-stone-900' : 'text-stone-900'}`}>
+              LOU
+            </span>
+            <span className={`text-[0.65rem] font-sans font-medium tracking-[0.35em] uppercase leading-none mt-1.5 ml-1 transition-colors ${isScrolled ? 'text-stone-600' : 'text-stone-700'}`}>
+              STUDIO
             </span>
           </a>
 
@@ -84,8 +86,8 @@ export const Navbar: React.FC = () => {
                 key={link.id}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className={`text-sm font-medium transition-colors hover:text-stone-900 ${
-                  activeSection === link.id ? 'text-stone-900 underline underline-offset-4 decoration-stone-900' : 'text-stone-600'
+                className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+                  activeSection === link.id ? 'text-primary-600 underline underline-offset-4 decoration-primary-500' : 'text-stone-600'
                 }`}
               >
                 {link.name}
@@ -94,7 +96,7 @@ export const Navbar: React.FC = () => {
             
             <button 
               onClick={toggleLanguage}
-              className="text-stone-600 hover:text-stone-900 font-medium text-sm flex items-center gap-1 uppercase"
+              className="text-stone-600 hover:text-primary-600 font-medium text-sm flex items-center gap-1 uppercase"
             >
               {language}
             </button>
@@ -103,7 +105,7 @@ export const Navbar: React.FC = () => {
               href="https://wa.me/31612345678"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-stone-900 text-stone-50 px-5 py-2 rounded-full text-sm font-medium hover:bg-stone-800 transition-colors transform hover:scale-105"
+              className="bg-primary-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-primary-700 transition-colors transform hover:scale-105 shadow-md shadow-primary-500/20"
             >
               {t('nav.book')}
             </a>
@@ -136,7 +138,7 @@ export const Navbar: React.FC = () => {
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
               className={`text-lg font-medium transition-colors ${
-                  activeSection === link.id ? 'text-stone-900' : 'text-stone-600 hover:text-stone-900'
+                  activeSection === link.id ? 'text-primary-600' : 'text-stone-600 hover:text-primary-600'
               }`}
             >
               {link.name}
@@ -144,7 +146,7 @@ export const Navbar: React.FC = () => {
           ))}
           <a
              href="https://wa.me/31612345678"
-             className="bg-stone-900 text-stone-50 text-center py-3 rounded-md font-medium"
+             className="bg-primary-600 text-white text-center py-3 rounded-md font-medium hover:bg-primary-700 transition-colors"
           >
             {t('nav.book')}
           </a>

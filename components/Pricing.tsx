@@ -45,29 +45,29 @@ export const Pricing: React.FC = () => {
             return (
               <div
                 key={tier.name}
-                className={`relative p-8 rounded-2xl transition-all duration-300 ${
+                className={`relative p-8 rounded-2xl transition-all duration-300 flex flex-col ${
                   tier.recommended
-                    ? 'bg-stone-900 text-white shadow-xl scale-105 z-10'
-                    : 'bg-stone-50 text-stone-900 hover:shadow-lg'
+                    ? 'bg-primary-600 text-white shadow-xl scale-105 z-10 ring-4 ring-primary-100'
+                    : 'bg-stone-50 text-stone-900 hover:shadow-lg border border-stone-100 hover:border-primary-200'
                 }`}
               >
                 {tier.recommended && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-stone-200 text-stone-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-stone-900 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
                     {t('pricing.mostPopular')}
                   </div>
                 )}
-                <h3 className="text-xl font-medium mb-2">{tier.name}</h3>
+                <h3 className="text-xl font-medium mb-2 opacity-90">{tier.name}</h3>
                 <div className="flex items-baseline gap-1 mb-6">
                   <span className="text-4xl font-bold">{tier.price}</span>
-                  <span className={`text-sm ${tier.recommended ? 'text-stone-400' : 'text-stone-500'}`}>
+                  <span className={`text-sm ${tier.recommended ? 'text-primary-100' : 'text-stone-500'}`}>
                     / {tier.duration}
                   </span>
                 </div>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-8 flex-1">
                   {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-3">
-                      <Check size={18} className={tier.recommended ? 'text-stone-300' : 'text-stone-900'} />
-                      <span className={`text-sm ${tier.recommended ? 'text-stone-300' : 'text-stone-600'}`}>
+                    <li key={idx} className="flex items-start gap-3">
+                      <Check size={18} className={`mt-0.5 ${tier.recommended ? 'text-primary-200' : 'text-primary-600'}`} />
+                      <span className={`text-sm ${tier.recommended ? 'text-primary-50' : 'text-stone-600'}`}>
                         {feature}
                       </span>
                     </li>
@@ -79,8 +79,8 @@ export const Pricing: React.FC = () => {
                   rel="noopener noreferrer"
                   className={`block w-full text-center py-3 rounded-xl font-medium transition-colors ${
                     tier.recommended
-                      ? 'bg-white text-stone-900 hover:bg-stone-100'
-                      : 'bg-stone-900 text-white hover:bg-stone-800'
+                      ? 'bg-white text-primary-900 hover:bg-stone-100'
+                      : 'bg-stone-900 text-white hover:bg-primary-600'
                   }`}
                 >
                   {t('pricing.button')}
