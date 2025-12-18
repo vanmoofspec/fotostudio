@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
     <div className={`relative flex items-center bg-stone-200/50 p-1 rounded-full border border-stone-300/20 backdrop-blur-sm select-none ${className}`}>
       {/* Sliding background indicator */}
       <div 
-        className={`absolute h-[calc(100%-8px)] w-[calc(50%-4px)] bg-primary-900 rounded-full transition-all duration-300 ease-in-out shadow-sm ${
+        className={`absolute h-[calc(100%-8px)] w-[calc(50%-4px)] bg-primary-800 rounded-full transition-all duration-300 ease-in-out shadow-sm ${
           language === 'nl' ? 'translate-x-0' : 'translate-x-full'
         }`}
       />
@@ -94,10 +94,10 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex flex-col items-center group select-none">
-            <span className={`text-3xl font-serif font-normal tracking-wider leading-none transition-colors text-primary-900`}>
+            <span className={`text-3xl font-serif font-normal tracking-wider leading-none transition-colors text-primary-800`}>
               LOU
             </span>
-            <span className={`text-[0.65rem] font-sans font-medium tracking-[0.35em] uppercase leading-none mt-1.5 ml-1 transition-colors text-primary-800`}>
+            <span className={`text-[0.65rem] font-sans font-medium tracking-[0.35em] uppercase leading-none mt-1.5 ml-1 transition-colors text-primary-700`}>
               STUDIO
             </span>
           </a>
@@ -110,8 +110,8 @@ export const Navbar: React.FC = () => {
                   key={link.id}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className={`text-sm font-medium transition-colors hover:text-primary-600 ${
-                    activeSection === link.id ? 'text-primary-600 border-b-2 border-primary-500 pb-0.5' : 'text-stone-600'
+                  className={`text-sm font-medium transition-colors hover:text-primary-800 ${
+                    activeSection === link.id ? 'text-primary-800 border-b-2 border-primary-700 pb-0.5' : 'text-stone-600'
                   }`}
                 >
                   {link.name}
@@ -124,7 +124,7 @@ export const Navbar: React.FC = () => {
                 href="https://wa.me/31612345678"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary-800 transition-all transform hover:scale-105 shadow-md shadow-primary-900/10 active:scale-95"
+                className="bg-primary-800 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary-700 transition-all transform hover:scale-105 shadow-md shadow-primary-800/10 active:scale-95"
               >
                 {t('nav.book')}
               </a>
@@ -137,7 +137,7 @@ export const Navbar: React.FC = () => {
             <LanguageToggle className="scale-90" />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-primary-900 p-2 focus:outline-none bg-stone-200/50 rounded-full"
+              className="text-primary-800 p-2 focus:outline-none bg-stone-200/50 rounded-full"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -154,7 +154,7 @@ export const Navbar: React.FC = () => {
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
               className={`text-xl font-medium transition-colors ${
-                  activeSection === link.id ? 'text-primary-900' : 'text-stone-600 hover:text-primary-600'
+                  activeSection === link.id ? 'text-primary-800' : 'text-stone-600 hover:text-primary-700'
               }`}
             >
               {link.name}
@@ -162,7 +162,7 @@ export const Navbar: React.FC = () => {
           ))}
           <a
              href="https://wa.me/31612345678"
-             className="bg-primary-900 text-white text-center py-4 rounded-2xl font-medium hover:bg-primary-800 transition-colors shadow-lg shadow-primary-900/20 text-lg"
+             className="bg-primary-800 text-white text-center py-4 rounded-2xl font-medium hover:bg-primary-700 transition-colors shadow-lg shadow-primary-800/20 text-lg"
           >
             {t('nav.book')}
           </a>

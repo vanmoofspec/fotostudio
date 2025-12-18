@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOU Studio</title>
-    <!-- Favicon using a dark blue SVG to match the brand logo -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%231B2F47%22 rx=%2220%22/><text y=%2275%22 x=%2250%22 font-size=%2260%22 fill=%22white%22 font-family=%22serif%22 text-anchor=%22middle%22 font-weight=%22bold%22>L</text></svg>">
+    <!-- Favicon using the new brand color #7E1810 -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%237e1810%22 rx=%2220%22/><text y=%2275%22 x=%2250%22 font-size=%2260%22 fill=%22white%22 font-family=%22serif%22 text-anchor=%22middle%22 font-weight=%22bold%22>L</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -15,23 +15,23 @@
               stone: {
                 50: '#FAF9F6',  // Alabaster / Cloud White
                 100: '#F1F3F5',
-                200: '#E2E8F0', // Muted Blue-Grey
-                600: '#64748B', // Slate Grey
-                800: '#334155', // Cool Charcoal
-                900: '#0F172A', // Deep Navy-Black (Primary Text/Brand)
+                200: '#E2E8F0',
+                600: '#64748B',
+                800: '#334155',
+                900: '#1B1514', // Slightly warmer dark stone
               },
               primary: {
-                50: '#F4F7FB',
-                100: '#E5ECF5',
-                200: '#CAD9EB',
-                300: '#A1BDD9',
-                400: '#739BC4',
-                500: '#4F7BB0',
-                600: '#365E8F', // Classic Blue
-                700: '#2B4B73',
-                800: '#233F60',
-                900: '#1B2F47', // Deep Navy
-                950: '#0F1A29', // Darkest Navy
+                50: '#fdf4f3',
+                100: '#fae7e5',
+                200: '#f6d3cf',
+                300: '#eeada6',
+                400: '#e17f74',
+                500: '#cf564a',
+                600: '#b53d32',
+                700: '#962e26',
+                800: '#7e1810', // Brand Primary #7e1810
+                900: '#6a1811',
+                950: '#3b0804',
               }
             },
             fontFamily: {
@@ -73,7 +73,7 @@
 }
 </script>
 </head>
-  <body class="bg-stone-50 text-stone-900 antialiased selection:bg-primary-200 selection:text-primary-900">
+  <body class="bg-stone-50 text-stone-900 antialiased selection:bg-primary-100 selection:text-primary-800">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

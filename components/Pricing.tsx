@@ -47,8 +47,8 @@ export const Pricing: React.FC = () => {
                 key={tier.name}
                 className={`relative p-8 rounded-2xl transition-all duration-300 flex flex-col ${
                   tier.recommended
-                    ? 'bg-primary-600 text-white shadow-xl scale-105 z-10 ring-4 ring-primary-100'
-                    : 'bg-stone-50 text-stone-900 hover:shadow-lg border border-stone-100 hover:border-primary-200'
+                    ? 'bg-primary-800 text-white shadow-xl scale-105 z-10 ring-4 ring-primary-50'
+                    : 'bg-stone-50 text-stone-900 hover:shadow-lg border border-stone-100 hover:border-primary-100'
                 }`}
               >
                 {tier.recommended && (
@@ -59,14 +59,14 @@ export const Pricing: React.FC = () => {
                 <h3 className="text-xl font-medium mb-2 opacity-90">{tier.name}</h3>
                 <div className="flex items-baseline gap-1 mb-6">
                   <span className="text-4xl font-bold">{tier.price}</span>
-                  <span className={`text-sm ${tier.recommended ? 'text-primary-100' : 'text-stone-500'}`}>
+                  <span className={`text-sm ${tier.recommended ? 'text-primary-200' : 'text-stone-500'}`}>
                     / {tier.duration}
                   </span>
                 </div>
                 <ul className="space-y-4 mb-8 flex-1">
                   {tier.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <Check size={18} className={`mt-0.5 ${tier.recommended ? 'text-primary-200' : 'text-primary-600'}`} />
+                      <Check size={18} className={`mt-0.5 ${tier.recommended ? 'text-primary-300' : 'text-primary-700'}`} />
                       <span className={`text-sm ${tier.recommended ? 'text-primary-50' : 'text-stone-600'}`}>
                         {feature}
                       </span>
@@ -80,7 +80,7 @@ export const Pricing: React.FC = () => {
                   className={`block w-full text-center py-3 rounded-xl font-medium transition-colors ${
                     tier.recommended
                       ? 'bg-white text-primary-900 hover:bg-stone-100'
-                      : 'bg-stone-900 text-white hover:bg-primary-600'
+                      : 'bg-primary-800 text-white hover:bg-primary-700'
                   }`}
                 >
                   {t('pricing.button')}

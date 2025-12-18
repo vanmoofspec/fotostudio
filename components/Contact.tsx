@@ -21,7 +21,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4 group">
-                <div className="p-2 bg-primary-900/50 rounded-lg text-primary-400 group-hover:text-primary-300 transition-colors">
+                <div className="p-2 bg-primary-900/50 rounded-lg text-primary-300 group-hover:text-primary-200 transition-colors">
                   <MapPin size={20} />
                 </div>
                 <span className="text-primary-50 leading-relaxed">
@@ -30,13 +30,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
                 </span>
               </div>
               <div className="flex items-center gap-4 group">
-                <div className="p-2 bg-primary-900/50 rounded-lg text-primary-400 group-hover:text-primary-300 transition-colors">
+                <div className="p-2 bg-primary-900/50 rounded-lg text-primary-300 group-hover:text-primary-200 transition-colors">
                   <Mail size={20} />
                 </div>
                 <span className="text-primary-50">info@loustudio.nl</span>
               </div>
               <div className="flex items-center gap-4 group">
-                <div className="p-2 bg-primary-900/50 rounded-lg text-primary-400 group-hover:text-primary-300 transition-colors">
+                <div className="p-2 bg-primary-900/50 rounded-lg text-primary-300 group-hover:text-primary-200 transition-colors">
                   <Phone size={20} />
                 </div>
                 <span className="text-primary-50">+31 (0) 20 123 4567</span>
@@ -49,7 +49,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
             </div>
           </div>
           
-          <div className="h-80 md:h-full min-h-[350px] bg-white rounded-3xl overflow-hidden relative border border-primary-800 shadow-2xl transition-all duration-700">
+          <div className="h-80 md:h-full min-h-[350px] bg-white rounded-3xl overflow-hidden relative border border-primary-900 shadow-2xl transition-all duration-700">
              <iframe 
                 width="100%" 
                 height="100%" 

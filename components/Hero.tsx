@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
           alt="Professional Studio Interior with Lighting"
           className="w-full h-full object-cover"
         />
-        {/* Added a hint of primary color to the overlay */}
+        {/* Added a hint of brand color to the overlay */}
         <div className="absolute inset-0 bg-stone-900/10 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-stone-50 via-transparent to-transparent"></div>
       </div>
@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-5xl md:text-7xl font-light tracking-tight text-stone-900 mb-6 drop-shadow-sm">
           {t('hero.title.1')} <br />
-          <span className="font-semibold italic text-primary-700">{t('hero.title.2')}</span>
+          <span className="font-semibold italic text-primary-800">{t('hero.title.2')}</span>
         </h1>
         <p className="text-xl md:text-2xl text-stone-700 max-w-2xl mx-auto mb-10 font-light">
           {t('hero.subtitle')}
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
           <a
             href="#pricing"
             onClick={(e) => scrollToSection(e, '#pricing')}
-            className="group bg-primary-900 text-white px-8 py-4 rounded-full text-lg font-medium transition-all hover:bg-primary-800 hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-primary-900/20"
+            className="group bg-primary-800 text-white px-8 py-4 rounded-full text-lg font-medium transition-all hover:bg-primary-700 hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-primary-800/20"
           >
             {t('hero.rates')}
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
           <a
             href="#studio"
             onClick={(e) => scrollToSection(e, '#studio')}
-            className="bg-white/80 backdrop-blur-sm border border-primary-200 text-primary-900 px-8 py-4 rounded-full text-lg font-medium transition-all hover:bg-white hover:border-primary-300 shadow-sm"
+            className="bg-white/80 backdrop-blur-sm border border-primary-100 text-primary-800 px-8 py-4 rounded-full text-lg font-medium transition-all hover:bg-white hover:border-primary-200 shadow-sm"
           >
             {t('hero.discover')}
           </a>
