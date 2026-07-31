@@ -21,15 +21,21 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy, on
               {t('contact.desc')}
             </p>
             <div className="space-y-6">
-              <div className="flex items-start gap-4 group">
-                <div className="p-2 bg-primary-900/50 rounded-lg text-primary-300 group-hover:text-primary-200 transition-colors">
+              <a 
+                href="https://maps.app.goo.gl/qcTup3VGZNnx6AF7A?g_st=iw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 group hover:opacity-95 transition-opacity"
+                title="Open Google Maps"
+              >
+                <div className="p-2 bg-primary-900/50 rounded-lg text-primary-300 group-hover:text-primary-200 group-hover:bg-primary-900 transition-colors">
                   <MapPin size={20} />
                 </div>
-                <span className="text-primary-50 leading-relaxed">
+                <span className="text-primary-50 leading-relaxed group-hover:underline decoration-primary-300 underline-offset-4">
                   Kabelweg 22<br />
                   1014 BB Amsterdam
                 </span>
-              </div>
+              </a>
               <div className="flex items-center gap-4 group">
                 <div className="p-2 bg-primary-900/50 rounded-lg text-primary-300 group-hover:text-primary-200 transition-colors">
                   <Mail size={20} />
@@ -57,18 +63,29 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy, on
             </div>
           </div>
           
-          <div className="h-80 md:h-full min-h-[350px] bg-white rounded-3xl overflow-hidden relative border border-primary-900 shadow-2xl transition-all duration-700">
+          <div className="h-80 md:h-full min-h-[350px] bg-white rounded-3xl overflow-hidden relative border border-primary-900 shadow-2xl transition-all duration-700 group">
              <iframe 
                 width="100%" 
                 height="100%" 
                 id="gmap_canvas" 
-                src="https://maps.google.com/maps?q=Kabelweg+22,+1014+BB+Amsterdam&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4159.684313134965!2d4.8477105!3d52.389689499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e35497746aff%3A0xfa3b904bca753c5f!2sLou%20Studio!5e1!3m2!1snl!2snl!4v1785495099932!5m2!1snl!2snl" 
                 frameBorder="0" 
                 scrolling="no" 
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
                 title="Lou Studio Location"
                 className="w-full h-full"
              ></iframe>
              <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/5 rounded-3xl"></div>
+             <a 
+                href="https://maps.app.goo.gl/qcTup3VGZNnx6AF7A?g_st=iw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 bg-stone-900/90 hover:bg-stone-900 text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-lg border border-stone-700/60 backdrop-blur-md flex items-center gap-2 transition-all hover:scale-105"
+             >
+                <MapPin size={14} className="text-primary-300" />
+                <span>Open in Google Maps</span>
+             </a>
           </div>
         </div>
         
