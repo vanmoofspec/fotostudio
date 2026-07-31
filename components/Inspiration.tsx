@@ -130,7 +130,7 @@ export const Inspiration: React.FC = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {filteredItems.map((item) => {
             const title = t(item.titleKey);
             const desc = t(item.descKey);
@@ -140,32 +140,32 @@ export const Inspiration: React.FC = () => {
               <div
                 key={item.id}
                 onClick={() => setSelectedImage(item)}
-                className="group relative bg-white rounded-2xl overflow-hidden border border-stone-200/70 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col"
+                className="group relative bg-white rounded-xl overflow-hidden border border-stone-200/80 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col"
               >
                 {/* Image Container */}
-                <div className={`relative w-full ${item.aspect} overflow-hidden bg-stone-100`}>
+                <div className="relative w-full aspect-[4/3] overflow-hidden bg-stone-100">
                   <SmartImage
                     localSrc={item.imageLocal}
                     fallbackSrc={item.imageFallback}
                     alt={title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                   
                   {/* Category Pill */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="bg-stone-900/80 backdrop-blur-md text-white text-[11px] font-medium px-3 py-1 rounded-full uppercase tracking-wider">
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="bg-stone-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                       {categoryLabel}
                     </span>
                   </div>
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div className="text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                      <span className="inline-flex items-center gap-1 text-xs font-semibold tracking-wider uppercase text-primary-200 mb-1">
-                        <Camera size={13} />
+                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold tracking-wider uppercase text-primary-200 mb-1">
+                        <Camera size={12} />
                         Bekijk Details
                       </span>
-                      <p className="text-sm text-stone-200 line-clamp-2">
+                      <p className="text-xs text-stone-200 line-clamp-2 leading-relaxed">
                         {desc}
                       </p>
                     </div>
@@ -173,9 +173,9 @@ export const Inspiration: React.FC = () => {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-5 flex-1 flex flex-col justify-between bg-white border-t border-stone-100">
+                <div className="p-4 flex-1 flex flex-col justify-between bg-white border-t border-stone-100">
                   <div>
-                    <h3 className="text-lg font-medium text-stone-900 group-hover:text-primary-800 transition-colors">
+                    <h3 className="text-base font-medium text-stone-900 group-hover:text-primary-800 transition-colors">
                       {title}
                     </h3>
                     <p className="mt-1 text-xs text-stone-500 line-clamp-2 leading-relaxed">
@@ -183,9 +183,9 @@ export const Inspiration: React.FC = () => {
                     </p>
                   </div>
                   
-                  <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-medium text-primary-800 group-hover:text-primary-700">
+                  <div className="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-xs font-medium text-primary-800 group-hover:text-primary-700">
                     <span>Bekijk concept</span>
-                    <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={13} className="transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </div>
