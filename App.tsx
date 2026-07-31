@@ -8,11 +8,13 @@ import { Pricing } from './components/Pricing';
 import { Contact } from './components/Contact';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { TermsModal, PrivacyModal } from './components/LegalModals';
+import { ImageGuideModal } from './components/ImageGuideModal';
 import { LanguageProvider } from './context/LanguageContext';
 
 function AppContent() {
   const [isTermsOpen, setIsTermsOpen] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  const [isImageGuideOpen, setIsImageGuideOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-stone-50">
@@ -27,6 +29,7 @@ function AppContent() {
       <Contact 
         onOpenTerms={() => setIsTermsOpen(true)} 
         onOpenPrivacy={() => setIsPrivacyOpen(true)}
+        onOpenImageGuide={() => setIsImageGuideOpen(true)}
       />
       
       {/* Floating Action Buttons */}
@@ -35,6 +38,7 @@ function AppContent() {
       {/* Modals */}
       <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
       <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
+      <ImageGuideModal isOpen={isImageGuideOpen} onClose={() => setIsImageGuideOpen(false)} />
     </div>
   );
 }

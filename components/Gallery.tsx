@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { SmartImage } from './SmartImage';
 
 export const Gallery: React.FC = () => {
   const { t } = useLanguage();
@@ -18,8 +19,9 @@ export const Gallery: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
           <div className="h-80 md:h-auto md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-2xl">
-            <img
-              src="https://picsum.photos/800/800?grayscale"
+            <SmartImage
+              localSrc="/images/gallery-1.jpg"
+              fallbackSrc="https://picsum.photos/800/800?grayscale"
               alt="Main Studio Area"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -28,8 +30,9 @@ export const Gallery: React.FC = () => {
             </div>
           </div>
           <div className="h-64 md:h-auto md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl">
-             <img
-              src="https://picsum.photos/400/400?grayscale&random=1"
+             <SmartImage
+              localSrc="/images/gallery-2.jpg"
+              fallbackSrc="https://picsum.photos/400/400?grayscale&random=1"
               alt="Makeup Area"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -38,8 +41,9 @@ export const Gallery: React.FC = () => {
             </div>
           </div>
           <div className="h-64 md:h-auto md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl">
-             <img
-              src="https://picsum.photos/400/400?grayscale&random=2"
+             <SmartImage
+              localSrc="/images/gallery-3.jpg"
+              fallbackSrc="https://picsum.photos/400/400?grayscale&random=2"
               alt="Lounge"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -48,8 +52,9 @@ export const Gallery: React.FC = () => {
             </div>
           </div>
           <div className="h-64 md:h-auto md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl">
-             <img
-              src="https://picsum.photos/800/400?grayscale&random=3"
+             <SmartImage
+              localSrc="/images/gallery-4.jpg"
+              fallbackSrc="https://picsum.photos/800/400?grayscale&random=3"
               alt="Equipment"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

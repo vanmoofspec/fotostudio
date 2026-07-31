@@ -2,5 +2,7 @@
   "name": "Lou Studio",
   "description": "Een moderne, neutraal vormgegeven fotostudio verhuur website met WhatsApp integratie.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { SmartImage } from './SmartImage';
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -26,8 +27,9 @@ export const Hero: React.FC = () => {
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?auto=format&fit=crop&q=80&w=2670"
+        <SmartImage
+          localSrc="/images/hero.jpg"
+          fallbackSrc="https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?auto=format&fit=crop&q=80&w=2670"
           alt="Professional Studio Interior with Lighting"
           className="w-full h-full object-cover"
         />

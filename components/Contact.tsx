@@ -5,9 +5,10 @@ import { useLanguage } from '../context/LanguageContext';
 interface ContactProps {
   onOpenTerms: () => void;
   onOpenPrivacy: () => void;
+  onOpenImageGuide?: () => void;
 }
 
-export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) => {
+export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy, onOpenImageGuide }) => {
   const { t } = useLanguage();
 
   return (
@@ -67,6 +68,11 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy }) 
         <div className="border-t border-primary-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs tracking-wide text-primary-300/50">
             <p className="uppercase">&copy; {new Date().getFullYear()} Lou Studio. {t('contact.rights')}</p>
             <div className="flex gap-8 mt-6 md:mt-0">
+                {onOpenImageGuide && (
+                  <button onClick={onOpenImageGuide} className="hover:text-white transition-colors uppercase font-medium text-primary-200 underline underline-offset-4">
+                    📁 Public Foto Beheer
+                  </button>
+                )}
                 <button onClick={onOpenTerms} className="hover:text-white transition-colors uppercase font-medium">
                   {t('contact.terms')}
                 </button>

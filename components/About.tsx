@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { SmartImage } from './SmartImage';
 
 export const About: React.FC = () => {
   const { t } = useLanguage();
@@ -10,8 +11,9 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1 relative">
             <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-stone-200 relative z-10 shadow-2xl">
-               <img 
-                src="https://picsum.photos/600/800?grayscale&random=10" 
+               <SmartImage 
+                localSrc="/images/about.jpg"
+                fallbackSrc="https://picsum.photos/600/800?grayscale&random=10" 
                 alt="Studio Founders" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                />
