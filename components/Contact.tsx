@@ -43,9 +43,16 @@ export const Contact: React.FC<ContactProps> = ({ onOpenTerms, onOpenPrivacy, on
                 <span className="text-primary-50">+31 (0) 20 123 4567</span>
               </div>
             </div>
-            <div className="mt-10 flex gap-4">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-primary-900 rounded-full hover:bg-primary-800 transition-all hover:scale-110 shadow-lg border border-primary-800">
-                    <Instagram size={20} />
+            <div className="mt-10 flex items-center gap-4">
+                <a 
+                  href="https://www.instagram.com/loustudio.nl/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-2.5 px-4 py-2.5 bg-primary-900 rounded-full hover:bg-primary-800 text-primary-100 hover:text-white transition-all hover:scale-105 shadow-lg border border-primary-800/80 group"
+                  aria-label="Instagram @loustudio.nl"
+                >
+                    <Instagram size={18} className="group-hover:rotate-6 transition-transform" />
+                    <span className="text-xs font-medium tracking-wide">@loustudio.nl</span>
                 </a>
             </div>
           </div>

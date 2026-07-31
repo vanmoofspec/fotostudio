@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar: React.FC = () => {
@@ -120,7 +120,17 @@ export const Navbar: React.FC = () => {
               ))}
             </div>
             
-            <div className="flex items-center gap-4 border-l border-stone-200 pl-8">
+            <div className="flex items-center gap-3 border-l border-stone-200 pl-8">
+              <a
+                href="https://www.instagram.com/loustudio.nl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-full text-stone-600 hover:text-primary-800 hover:bg-stone-100 transition-all border border-stone-200/80"
+                aria-label="Instagram @loustudio.nl"
+                title="Volg ons op Instagram @loustudio.nl"
+              >
+                <Instagram size={18} />
+              </a>
               <a
                 href="https://wa.me/31612345678"
                 target="_blank"
@@ -134,7 +144,16 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-3">
+          <div className="md:hidden flex items-center gap-2">
+            <a
+              href="https://www.instagram.com/loustudio.nl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-stone-700 hover:text-primary-800 hover:bg-stone-200/50 transition-colors"
+              aria-label="Instagram @loustudio.nl"
+            >
+              <Instagram size={18} />
+            </a>
             <LanguageToggle className="scale-90" />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
