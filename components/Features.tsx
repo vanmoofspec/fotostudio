@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Maximize, Wifi, Coffee, Sun, ShieldCheck } from 'lucide-react';
+import { Zap, Maximize, Wifi, Coffee, Box, ShieldCheck } from 'lucide-react';
 import { Feature } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -20,7 +20,7 @@ export const Features: React.FC = () => {
     {
       title: t('feat.light.title'),
       description: t('feat.light.desc'),
-      icon: Sun,
+      icon: Box,
     },
     {
       title: t('feat.wifi.title'),

@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Features } from './components/Features';
 import { Gallery } from './components/Gallery';
 import { Pricing } from './components/Pricing';
+import { Inspiration } from './components/Inspiration';
 import { Contact } from './components/Contact';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { TermsModal, PrivacyModal } from './components/LegalModals';
@@ -25,6 +26,7 @@ function AppContent() {
         <Features />
         <Gallery />
         <Pricing />
+        <Inspiration />
       </main>
       <Contact 
         onOpenTerms={() => setIsTermsOpen(true)} 
